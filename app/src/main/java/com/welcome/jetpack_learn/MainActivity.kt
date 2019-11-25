@@ -10,5 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         StatusBarUtil.setLightMode(this)
         setContentView(R.layout.activity_main)
+
     }
 }

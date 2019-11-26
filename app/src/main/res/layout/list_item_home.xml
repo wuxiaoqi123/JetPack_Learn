@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="component"
+            type="com.welcome.jetpack_learn.data.bean.Component" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp12"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{clickListener}"
+        app:cardCornerRadius="@dimen/dp2"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingTop="@dimen/dp10"
+            android:paddingRight="@dimen/dp10"
+            android:paddingBottom="@dimen/dp20">
+
+            <TextView
+                style="@style/normalTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{component.title}"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/smallTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp10"
+                android:text="@{component.description}" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

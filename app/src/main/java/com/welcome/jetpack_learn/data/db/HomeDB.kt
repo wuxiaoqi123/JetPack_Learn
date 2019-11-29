@@ -1,15 +1,18 @@
 package com.welcome.jetpack_learn.data.db
 
 import android.content.Context
+import android.util.Log
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import com.welcome.jetpack_learn.data.Converters
 import com.welcome.jetpack_learn.data.bean.Component
 import com.welcome.jetpack_learn.utils.Constants.DATABASE_NAME
+import com.welcome.jetpack_learn.workers.SeedDatabaseWorker
 
 @Database(entities = [Component::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
@@ -23,7 +26,7 @@ abstract class HomeDB : RoomDatabase() {
 
         fun getInstance(context: Context): HomeDB {
             return instance ?: synchronized(this) {
-                instance ?:
+                instance ?: buildDatabase(context).also { instance = it }
             }
         }
 
@@ -32,7 +35,8 @@ abstract class HomeDB : RoomDatabase() {
                 .addCallback(object : RoomDatabase.Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
-                        val request = OneTimeWorkRequestBuilder<>()
+                        val request = OneTimeWorkRequestBuilder<SeedDatabaseWorker>().build()
+                        WorkManager.getInstance(context).enqueue(request)
                     }
                 }).build()
         }

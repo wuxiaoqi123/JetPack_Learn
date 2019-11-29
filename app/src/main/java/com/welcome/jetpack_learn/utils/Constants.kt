@@ -2,7 +2,7 @@ package com.welcome.jetpack_learn.utils
 
 object Constants {
     const val DATABASE_NAME = "JetpackNote-db"
-    const val COMPONENT_DATA_FILENAME = "componet.json"
+    const val COMPONENT_DATA_FILENAME = "component.json"
 
     object AboutUrl {
         const val JETPACK = "https://github.com/Hankkin/JetPack_Note"

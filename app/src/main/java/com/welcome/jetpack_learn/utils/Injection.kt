@@ -1,12 +1,13 @@
 package com.welcome.jetpack_learn.utils
 
 import android.content.Context
+import com.welcome.jetpack_learn.data.db.HomeDB
 import com.welcome.jetpack_learn.data.respository.HomeRepository
 
-object Injection{
+object Injection {
 
-    fun provideHomeRepository(context:Context) =
+    fun provideHomeRepository(context: Context) =
         HomeRepository.getInstance(
-            HomeDB
+            HomeDB.getInstance(context.applicationContext).homeDao()
         )
 }

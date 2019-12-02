@@ -34,4 +34,11 @@
             android:name="title"
             app:argType="string" />
     </fragment>
+
+    <fragment
+        android:id="@+id/navigationFragment"
+        android:name="com.welcome.jetpack_learn.ui.navigation.NavigationFragment"
+        android:label="@string/menu_navigation">
+
+    </fragment>
 </navigation>

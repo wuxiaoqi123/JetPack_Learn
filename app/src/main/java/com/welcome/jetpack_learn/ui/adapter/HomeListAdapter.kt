@@ -10,8 +10,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.welcome.jetpack_learn.data.bean.Component
 import com.welcome.jetpack_learn.databinding.ListItemHomeBinding
+import com.welcome.jetpack_learn.ui.home.HomeFragmentDirections
 
-class HomeListAdapter : ListAdapter<Component, HomeListAdapter.ViewHolder>((ComponentDiffCallback())) {
+class HomeListAdapter :
+    ListAdapter<Component, HomeListAdapter.ViewHolder>((ComponentDiffCallback())) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -34,9 +36,9 @@ class HomeListAdapter : ListAdapter<Component, HomeListAdapter.ViewHolder>((Comp
             if (link.isEmpty()) {
                 Toast.makeText(it.context, "敬请期待...", Toast.LENGTH_SHORT).show()
             } else {
-//                val direction = HomeFragmentDirections.actionNavigationFragmentToWebFragment(link, title)
-//                it.findNavController().navigate(direction)
-                Toast.makeText(it.context, "点击...", Toast.LENGTH_SHORT).show()
+                val direction =
+                    HomeFragmentDirections.actionNavigationFragmentToWebFragment(link, title)
+                it.findNavController().navigate(direction)
             }
         }
     }

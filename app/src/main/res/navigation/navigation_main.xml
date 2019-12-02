@@ -13,5 +13,25 @@
         android:name="com.welcome.jetpack_learn.ui.home.HomeFragment"
         android:label="@string/title_home">
 
+        <action
+            android:id="@+id/action_navigationFragment_to_webFragment"
+            app:destination="@id/webFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="com.welcome.jetpack_learn.other.WebFragment"
+        android:label=""
+        tools:layout="@layout/fragment_web">
+        <argument
+            android:name="link"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
     </fragment>
 </navigation>

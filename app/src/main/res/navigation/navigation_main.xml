@@ -39,6 +39,29 @@
         android:id="@+id/navigationFragment"
         android:name="com.welcome.jetpack_learn.ui.navigation.NavigationFragment"
         android:label="@string/menu_navigation">
-
+        <action
+            android:id="@+id/action_navigationFragment_to_navSampleActivity"
+            app:destination="@id/navSampleActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_navigationFragment_to_bottomNavSampleActivity"
+            app:destination="@id/bottomNavSampleActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+
+    <activity
+        android:id="@+id/navSampleActivity"
+        android:name="com.welcome.jetpack_learn.ui.navigation.activity.NavSampleActivity"
+        android:label="NavSampleActivity" />
+
+    <activity
+        android:id="@+id/bottomNavSampleActivity"
+        android:name="com.welcome.jetpack_learn.ui.navigation.activity.BottomNavSampleActivity"
+        android:label="BottomNavSampleActivity" />
 </navigation>

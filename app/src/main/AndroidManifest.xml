@@ -37,6 +37,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.navigation.activity.BottomNavSampleActivity"
+            android:label="@string/title_activity_bottom_nav_sample" />
+
+        <activity
+            android:name=".ui.navigation.activity.NavSampleActivity"
+            android:label="@string/title_activity_nav_sample"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

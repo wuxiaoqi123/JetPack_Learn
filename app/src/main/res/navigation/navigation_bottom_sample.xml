@@ -6,15 +6,60 @@
     <fragment
         android:id="@+id/homeSampleFragment"
         android:name="com.welcome.jetpack_learn.ui.navigation.fg.SampleHomeFragment"
-        android:label="@string/title_home" />
+        android:label="@string/title_home">
+
+        <action
+            android:id="@+id/action_homeSampleFragment_to_dashSampleFragment"
+            app:destination="@id/dashBoardSampleFragment" />
+
+        <action
+            android:id="@+id/action_homeSampleFragment_to_dashBoardSampleFragment_action"
+            app:destination="@id/dashBoardSampleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_homeSampleFragment_to_argsSampleFragment"
+            app:destination="@id/argsSampleFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/dashBoardSampleFragment"
         android:name="com.welcome.jetpack_learn.ui.navigation.fg.SampleDashboardFragment"
-        android:label="@string/title_dashboard" />
+        android:label="@string/title_dashboard">
+
+        <action
+            android:id="@+id/action_dashBoardSampleFragment_to_notificationSampleFragment"
+            app:destination="@id/notificationSampleFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/notificationSampleFragment"
         android:name="com.welcome.jetpack_learn.ui.navigation.fg.SampleNotificationFragment"
         android:label="@string/title_notifications" />
+
+    <fragment
+        android:id="@+id/argsSampleFragment"
+        android:name="com.welcome.jetpack_learn.ui.navigation.fg.SampleArgsFragment"
+        android:label="@string/title_dashboard">
+
+        <argument
+            android:name="argument_flag"
+            app:argType="integer" />
+
+        <argument
+            android:name="argument_normal"
+            app:argType="string" />
+
+        <argument
+            android:name="argument_bean"
+            app:argType="com.welcome.jetpack_learn.data.bean.Component" />
+
+        <action
+            android:id="@+id/action_argsSampleFragment_to_homeSampleFragment"
+            app:popUpTo="@id/homeSampleFragment" />
+    </fragment>
 </navigation>

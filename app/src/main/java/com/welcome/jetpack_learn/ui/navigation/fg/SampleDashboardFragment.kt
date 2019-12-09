@@ -22,7 +22,7 @@ class SampleDashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_nav_dashboard_jump.setOnClickListener {
-//            findNavController()
+            findNavController().navigate(R.id.action_dashBoardSampleFragment_to_notificationSampleFragment)
         }
     }
 }

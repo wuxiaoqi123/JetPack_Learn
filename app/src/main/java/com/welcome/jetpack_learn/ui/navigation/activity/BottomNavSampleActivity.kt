@@ -1,6 +1,8 @@
 package com.welcome.jetpack_learn.ui.navigation.activity
 
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -30,6 +32,10 @@ class BottomNavSampleActivity : AppCompatActivity() {
             navController.navigateUp()
         }
         initBottomNavigation()
+//        toolbar.setNavigationIcon(R.mipmap.ic_launcher)
+        toolbar.setNavigationOnClickListener {
+            finish()
+        }
     }
 
     private fun initBottomNavigation() {

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@mipmap/bg_notification" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_deep_link_args_hint"
+        style="@style/normalTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp20"
+        android:hint="@string/deep_link_args_hint" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_deep_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp20"
+        android:hint="@string/navigation_sample_deep_link_hint" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_nav_deep_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp20"
+        android:backgroundTint="@color/theme"
+        android:gravity="center"
+        android:text="@string/navigation_sample_deep_link" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_nav_dashboard_jump_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp20"
+        android:backgroundTint="@color/theme"
+        android:gravity="center"
+        android:text="@string/navigation_sample_jump_go_home" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

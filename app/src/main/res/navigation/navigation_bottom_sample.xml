@@ -7,4 +7,14 @@
         android:id="@+id/homeSampleFragment"
         android:name="com.welcome.jetpack_learn.ui.navigation.fg.SampleHomeFragment"
         android:label="@string/title_home" />
+
+    <fragment
+        android:id="@+id/dashBoardSampleFragment"
+        android:name="com.welcome.jetpack_learn.ui.navigation.fg.SampleDashboardFragment"
+        android:label="@string/title_dashboard" />
+
+    <fragment
+        android:id="@+id/notificationSampleFragment"
+        android:name="com.welcome.jetpack_learn.ui.navigation.fg.SampleNotificationFragment"
+        android:label="@string/title_notifications" />
 </navigation>

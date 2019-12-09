@@ -39,7 +39,15 @@
     <fragment
         android:id="@+id/notificationSampleFragment"
         android:name="com.welcome.jetpack_learn.ui.navigation.fg.SampleNotificationFragment"
-        android:label="@string/title_notifications" />
+        android:label="@string/title_notifications">
+
+        <action
+            android:id="@+id/action_notificationSampleFragment_to_homeSampleFragment"
+            app:popUpTo="@id/homeSampleFragment" />
+
+        <argument android:name="deep_args" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/argsSampleFragment"

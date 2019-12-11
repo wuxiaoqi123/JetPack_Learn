@@ -55,6 +55,11 @@
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
+    <fragment
+        android:id="@+id/lifecyclesFragment"
+        android:label="Lifecycles"
+        android:name="com.welcome.jetpack_learn.ui.lifecycles.LifecyclesFragment" />
+
     <activity
         android:id="@+id/navSampleActivity"
         android:name="com.welcome.jetpack_learn.ui.navigation.activity.NavSampleActivity"

@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.welcome.jetpack_learn.R
+import com.yhao.floatwindow.FloatWindow
+import kotlinx.android.synthetic.main.fragment_lifecycles.*
 
 class LifecyclesFragment : Fragment() {
 
@@ -15,5 +17,20 @@ class LifecyclesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_lifecycles, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        setUI()
+    }
+
+    private fun setUI() {
+        btn_add_obserber.setOnClickListener {
+            if (FloatWindow.get() == null) {
+            }
+        }
+        btn_location.setOnClickListener {
+
+        }
     }
 }

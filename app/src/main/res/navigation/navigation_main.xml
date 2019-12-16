@@ -74,4 +74,15 @@
         android:id="@+id/bottomNavSampleActivity"
         android:name="com.welcome.jetpack_learn.ui.navigation.activity.BottomNavSampleActivity"
         android:label="BottomNavSampleActivity" />
+
+    <activity
+        android:id="@+id/pagingWithDaoActivity"
+        android:name="com.welcome.jetpack_learn.ui.paging.PagingWithDaoActivity"
+        android:label="activity_paging_with_dao" />
+
+    <activity
+        android:id="@+id/pagingWithNetWorkActivity"
+        android:name="com.welcome.jetpack_learn.ui.paging.PagingWithDaoNetWorkActivity"
+        android:label="activity_paging_with_new_work" />
+
 </navigation>

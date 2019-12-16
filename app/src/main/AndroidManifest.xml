@@ -46,6 +46,10 @@
             android:name=".ui.navigation.activity.NavSampleActivity"
             android:label="@string/title_activity_nav_sample"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".ui.paging.PagingWithDaoActivity" />
+
+        <activity android:name=".ui.paging.PagingWithDaoNetWorkActivity" />
     </application>
 
 </manifest>

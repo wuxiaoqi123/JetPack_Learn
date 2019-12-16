@@ -1,5 +1,7 @@
 package com.welcome.jetpack_learn
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -13,7 +15,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.tbruyelle.rxpermissions2.RxPermissions
 import com.welcome.jetpack_learn.databinding.ActivityMainBinding
+import com.welcome.jetpack_learn.utils.FloatWindowUtils
 import com.welcome.jetpack_learn.utils.StatusBarUtil
 
 class MainActivity : AppCompatActivity() {
@@ -67,10 +71,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    private fun requestPermission(){
+    @SuppressLint("CheckResult")
+    private fun requestPermission() {
+        RxPermissions(this)
+            .requestEach(
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            )
+            .subscribe { p0 ->
+                when {
+                    p0.granted -> {
 
+                    }
+                    p0.shouldShowRequestPermissionRationale -> {
+
+                    }
+                }
+            }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        FloatWindowUtils.destory()
     }
 }

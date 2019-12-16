@@ -57,8 +57,13 @@
 
     <fragment
         android:id="@+id/lifecyclesFragment"
-        android:label="Lifecycles"
-        android:name="com.welcome.jetpack_learn.ui.lifecycles.LifecyclesFragment" />
+        android:name="com.welcome.jetpack_learn.ui.lifecycles.LifecyclesFragment"
+        android:label="Lifecycles" />
+
+    <fragment
+        android:id="@+id/pagingDemoFragment"
+        android:name="com.welcome.jetpack_learn.ui.paging.PagingDemoFragment"
+        android:label="分页加载" />
 
     <activity
         android:id="@+id/navSampleActivity"

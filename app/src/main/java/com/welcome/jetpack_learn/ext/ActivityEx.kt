@@ -8,8 +8,11 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
 import com.welcome.jetpack_learn.R
+import com.welcome.jetpack_learn.app.ViewModelFactory
 import com.welcome.jetpack_learn.utils.StatusBarUtil
 
 
@@ -35,3 +38,8 @@ fun AppCompatActivity.setupToolBar(toolbar: Toolbar, action: ActionBar.() -> Uni
         action
     }
 }
+
+fun <T : ViewModel> AppCompatActivity.obtainViewModel(viewModelClass: Class<T>) =
+    ViewModelProviders.of(this, application?.let { ViewModelFactory.getInstance(it) }).get(
+        viewModelClass
+    )

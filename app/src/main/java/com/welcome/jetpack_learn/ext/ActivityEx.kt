@@ -35,7 +35,7 @@ fun AppCompatActivity.setupToolBar(toolbar: Toolbar, action: ActionBar.() -> Uni
     toolbar.setTitleTextColor(resources.getColor(R.color.black))
     setSupportActionBar(toolbar)
     supportActionBar?.run {
-        action
+        action()
     }
 }
 

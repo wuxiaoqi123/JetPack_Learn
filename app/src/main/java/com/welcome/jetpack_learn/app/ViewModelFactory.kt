@@ -5,13 +5,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.welcome.jetpack_learn.data.respository.HomeRepository
 import com.welcome.jetpack_learn.data.respository.PagingRespository
+import com.welcome.jetpack_learn.data.respository.gank.GankRespository
 import com.welcome.jetpack_learn.ui.home.HomeListViewModel
 import com.welcome.jetpack_learn.ui.paging.PagingWithDaoViewModel
+import com.welcome.jetpack_learn.ui.paging.PagingWithNetWorkViewModel
 import com.welcome.jetpack_learn.utils.Injection
 
 class ViewModelFactory(
     private val homeRepository: HomeRepository,
-    private val pagingRespository: PagingRespository
+    private val pagingRespository: PagingRespository,
+    private val gankRespository: GankRespository
 ) : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T =
@@ -22,6 +25,9 @@ class ViewModelFactory(
                 }
                 isAssignableFrom(PagingWithDaoViewModel::class.java) -> {
                     PagingWithDaoViewModel(pagingRespository)
+                }
+                isAssignableFrom(PagingWithNetWorkViewModel::class.java) -> {
+                    PagingWithNetWorkViewModel(gankRespository)
                 }
                 else ->
                     throw IllegalArgumentException("Unknown ViewModel:${modelClass.name}")
@@ -34,7 +40,8 @@ class ViewModelFactory(
             INSTANCE ?: synchronized(this) {
                 INSTANCE ?: ViewModelFactory(
                     Injection.provideHomeRepository(application),
-                    Injection.providePagingRepository(application)
+                    Injection.providePagingRepository(application),
+                    Injection.provideGankRespository()
                 )
             }
     }

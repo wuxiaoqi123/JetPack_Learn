@@ -25,6 +25,7 @@ class PagingWithDaoNetWorkActivity : AppCompatActivity() {
         }
         mViewModel = obtainViewModel(PagingWithNetWorkViewModel::class.java)
         mDataBinding.vm = mViewModel
+        mDataBinding.lifecycleOwner = this
 
     }
 }

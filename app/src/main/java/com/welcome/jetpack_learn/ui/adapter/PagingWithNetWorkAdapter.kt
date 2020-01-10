@@ -70,8 +70,17 @@ class PagingWithNetWorkAdapter : PagedListAdapter<Gank, PagingWithNetWorkAdapter
 
     fun setNetworkState(newNetworkState: NetworkState) {
         val previousState = this.neworkState
-        val hasExtraRow = hasExtraRow()
+        val hadExtraRow = hasExtraRow()
         this.neworkState = neworkState
-
+        val hasExtraRow = hasExtraRow()
+        if (hadExtraRow != hasExtraRow) {
+            if (hadExtraRow) {
+                notifyItemRemoved(super.getItemCount())
+            } else {
+                notifyItemInserted(super.getItemCount())
+            }
+        } else if (hasExtraRow && previousState != newNetworkState) {
+            notifyItemChanged(itemCount - 1)
+        }
     }
 }

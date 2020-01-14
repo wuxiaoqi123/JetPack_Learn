@@ -50,6 +50,8 @@
         <activity android:name=".ui.paging.PagingWithDaoActivity" />
 
         <activity android:name=".ui.paging.PagingWithDaoNetWorkActivity" />
+
+        <activity android:name=".ui.other.CommonWebActivity" />
     </application>
 
 </manifest>

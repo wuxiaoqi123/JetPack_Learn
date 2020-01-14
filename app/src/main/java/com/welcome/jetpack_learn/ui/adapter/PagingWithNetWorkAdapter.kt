@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.welcome.jetpack_learn.data.NetworkState
 import com.welcome.jetpack_learn.data.bean.Gank
 import com.welcome.jetpack_learn.databinding.AdapterPagingWithNetworkItemBinding
+import com.welcome.jetpack_learn.ui.other.CommonWebActivity
 
 class PagingWithNetWorkAdapter : PagedListAdapter<Gank, PagingWithNetWorkAdapter.ViewHolder>(
     diffCallback
@@ -50,7 +51,7 @@ class PagingWithNetWorkAdapter : PagedListAdapter<Gank, PagingWithNetWorkAdapter
     private fun createOnClickListener(item: Gank?): View.OnClickListener {
         return View.OnClickListener {
             item?.run {
-                //TODO
+                CommonWebActivity.loadUrl(it.context, url, desc)
             }
         }
     }

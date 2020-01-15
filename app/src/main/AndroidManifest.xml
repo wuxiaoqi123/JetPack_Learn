@@ -52,6 +52,8 @@
         <activity android:name=".ui.paging.PagingWithDaoNetWorkActivity" />
 
         <activity android:name=".ui.other.CommonWebActivity" />
+
+        <activity android:name=".ui.viewmodel.ViewModelShareActivity" />
     </application>
 
 </manifest>

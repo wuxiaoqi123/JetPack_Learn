@@ -7,6 +7,7 @@ import com.welcome.jetpack_learn.data.respository.HomeRepository
 import com.welcome.jetpack_learn.data.respository.PagingRespository
 import com.welcome.jetpack_learn.data.respository.gank.GankRespository
 import com.welcome.jetpack_learn.ui.home.HomeListViewModel
+import com.welcome.jetpack_learn.ui.livedata.LiveDataViewModel
 import com.welcome.jetpack_learn.ui.paging.PagingWithDaoViewModel
 import com.welcome.jetpack_learn.ui.paging.PagingWithNetWorkViewModel
 import com.welcome.jetpack_learn.utils.Injection
@@ -22,6 +23,9 @@ class ViewModelFactory(
             when {
                 isAssignableFrom(HomeListViewModel::class.java) -> {
                     HomeListViewModel(homeRepository)
+                }
+                isAssignableFrom(LiveDataViewModel::class.java) -> {
+                    LiveDataViewModel()
                 }
                 isAssignableFrom(PagingWithDaoViewModel::class.java) -> {
                     PagingWithDaoViewModel(pagingRespository)

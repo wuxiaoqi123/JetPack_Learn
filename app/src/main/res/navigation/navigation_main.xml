@@ -85,4 +85,13 @@
         android:name="com.welcome.jetpack_learn.ui.paging.PagingWithDaoNetWorkActivity"
         android:label="activity_paging_with_new_work" />
 
+    <fragment
+        android:id="@+id/moreSampleFragment"
+        android:name="com.welcome.jetpack_learn.ui.MoreSampleFragment"
+        android:label="@string/menu_more" />
+
+    <activity
+        android:id="@+id/viewModelShareActivity"
+        android:name="com.welcome.jetpack_learn.ui.viewmodel.ViewModelShareActivity"
+        android:label="activity_view_model_share" />
 </navigation>
